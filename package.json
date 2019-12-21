@@ -1,0 +1,47 @@
+{
+  "name": "mkv-app",
+  "version": "1.0.0",
+  "description": "",
+  "private": true,
+  "scripts": {
+    "start": "cross-env NODE_ENV=development nodemon server.js --exec babel-node -e js",
+    "test": "cross-env NODE_ENV=testing jest --forceExit",
+    "build": "cross-env NODE_ENV=production babel src -d build && npm run pretty",
+    "pretty": "prettier --write --print-width 80 --single-quote --trailing-comma es5 --tab-width 4 --no-semi 'src/**/*.js' 'tests/**/*.js'",
+    "start-production": "cross-env NODE_ENV=production pm2 start ecosystem.json",
+    "clean": "npm cache clean --force"
+  },
+  "author": "David Livingstan",
+  "license": "MIT",
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-preset-env": "^1.7.0",
+    "koa": "^2.7.0"
+  },
+  "dependencies": {
+    "chalk": "^2.4.2",
+    "cross-env": "^5.2.0",
+    "dotenv": "^5.0.1",
+    "faker": "^4.1.0",
+    "joi": "^13.7.0",
+    "jsonwebtoken": "^8.5.1",
+    "kcors": "^2.2.2",
+    "koa-body": "^2.6.0",
+    "koa-bodyparser": "^4.2.1",
+    "koa-convert": "^1.2.0",
+    "koa-json-error": "^3.1.2",
+    "koa-jwt": "^3.6.0",
+    "koa-logger": "^3.2.1",
+    "koa-res": "^3.1.1",
+    "koa-rest-router": "^1.0.1",
+    "koa-router": "^7.4.0",
+    "koa-useragent": "^1.2.1",
+    "log4js": "^2.11.0",
+    "mocha": "^5.2.0",
+    "mongo-seeding": "^3.3.0-alpha.0",
+    "mongoose": "^5.6.7",
+    "nodemon": "^1.19.1",
+    "path": "^0.12.7",
+    "pluralize": "^7.0.0"
+  }
+}
